@@ -1582,11 +1582,16 @@ footer {
    SCROLL REVEAL
 ============================================================ */
 .reveal {
-  opacity: 0;
-  transform: translateY(30px);
+  opacity: 1;
+  transform: none;
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
-.reveal.visible {
+
+.js-ready .reveal {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.js-ready .reveal.visible {
   opacity: 1;
   transform: none;
 }
@@ -2554,7 +2559,7 @@ footer {
 <nav id="navbar">
   <div class="nav-container">
     <a href="#hero" class="nav-logo" style="flex-direction:row;align-items:center;gap:11px;">
-      <img src="images/img_04.png" alt="Envision Logo" class="nav-logo-img">
+      <img src="images/img_04.png" onerror="this.style.background=\'#2a5740\';this.removeAttribute(\'src\')" alt="Envision Logo" class="nav-logo-img">
       <div>
         <span class="nav-logo-main">Envision Outdoor</span>
         <span class="nav-logo-sub" style="display:block;">Solutions</span>
@@ -2613,7 +2618,7 @@ footer {
       <span>Premium Outdoor Landscaping · Seville, OH</span>
     </div>
     <div class="hero-logo-wrap">
-      <img src="images/img_04.png" alt="Envision Outdoor Landscape Solutions" class="hero-logo-img">
+      <img src="images/img_04.png" onerror="this.style.background=\'#2a5740\';this.removeAttribute(\'src\')" alt="Envision Outdoor Landscape Solutions" class="hero-logo-img">
     </div>
     <h1 class="hero-headline display-heading">
       Transform Your<br>Outdoor Space<br><em>With Confidence</em>
@@ -2820,7 +2825,7 @@ footer {
 <section id="meet-owner" style="background:var(--cream);padding:110px 0;">
   <div class="owner-grid-inner">
     <div style="position:relative;" class="reveal">
-      <img src="images/img_05.png" alt="Owner of Envision Outdoor Solutions"
+      <img src="images/img_05.png" onerror="this.style.background=\'#2a5740\';this.removeAttribute(\'src\')" alt="Owner of Envision Outdoor Solutions"
            style="width:100%;border-radius:14px;display:block;box-shadow:0 20px 60px rgba(27,58,45,0.18);aspect-ratio:3/4;object-fit:cover;object-position:center top;">
       <div style="position:absolute;bottom:-18px;right:-18px;background:var(--gold);border-radius:14px;padding:18px 22px;box-shadow:0 8px 32px rgba(27,58,45,0.14);text-align:center;">
         <div style="font-family:'Palatino Linotype',Georgia,serif;font-size:2rem;font-weight:700;color:#fff;line-height:1;">100%</div>
@@ -3122,35 +3127,35 @@ footer {
   </div>
   <div class="gallery-grid">
     <div class="gallery-item tall reveal">
-      <img class="gallery-img" src="images/img_01.jpg" alt="Perfectly striped lawn">
+      <img class="gallery-img" src="images/img_01.jpg" onerror="this.style.background=\'#2a5740\';this.removeAttribute(\'src\')" alt="Perfectly striped lawn">
       <div class="gallery-overlay"><div><div class="gallery-overlay-tag">Lawn Care</div><div class="gallery-overlay-text">Precision Mowing &amp; Striping</div></div></div>
     </div>
     <div class="gallery-item reveal reveal-delay-1">
-      <img class="gallery-img" src="images/img_08.jpg" alt="Fresh mulch and plantings">
+      <img class="gallery-img" src="images/img_08.jpg" onerror="this.style.background=\'#2a5740\';this.removeAttribute(\'src\')" alt="Fresh mulch and plantings">
       <div class="gallery-overlay"><div><div class="gallery-overlay-tag">Mulch &amp; Beds</div><div class="gallery-overlay-text">Fresh Mulch &amp; Planting</div></div></div>
     </div>
     <div class="gallery-item reveal reveal-delay-2">
-      <img class="gallery-img" src="images/img_12.jpg" alt="Mulch bed along walkway">
+      <img class="gallery-img" src="images/img_12.jpg" onerror="this.style.background=\'#2a5740\';this.removeAttribute(\'src\')" alt="Mulch bed along walkway">
       <div class="gallery-overlay"><div><div class="gallery-overlay-tag">Landscape</div><div class="gallery-overlay-text">Bed &amp; Walkway Design</div></div></div>
     </div>
     <div class="gallery-item wide reveal reveal-delay-1">
-      <img class="gallery-img" src="images/img_06.jpg" alt="Full front yard curb appeal">
+      <img class="gallery-img" src="images/img_06.jpg" onerror="this.style.background=\'#2a5740\';this.removeAttribute(\'src\')" alt="Full front yard curb appeal">
       <div class="gallery-overlay"><div><div class="gallery-overlay-tag">Curb Appeal</div><div class="gallery-overlay-text">Complete Front Yard Transformation</div></div></div>
     </div>
     <div class="gallery-item reveal reveal-delay-2">
-      <img class="gallery-img" src="images/img_13.jpg" alt="Stepping stone pathway">
+      <img class="gallery-img" src="images/img_13.jpg" onerror="this.style.background=\'#2a5740\';this.removeAttribute(\'src\')" alt="Stepping stone pathway">
       <div class="gallery-overlay"><div><div class="gallery-overlay-tag">Hardscape</div><div class="gallery-overlay-text">Stepping Stone Pathway</div></div></div>
     </div>
     <div class="gallery-item reveal reveal-delay-3">
-      <img class="gallery-img" src="images/img_02.jpg" alt="Long mulch bed under trees">
+      <img class="gallery-img" src="images/img_02.jpg" onerror="this.style.background=\'#2a5740\';this.removeAttribute(\'src\')" alt="Long mulch bed under trees">
       <div class="gallery-overlay"><div><div class="gallery-overlay-tag">Landscape</div><div class="gallery-overlay-text">Tree Bed Landscaping</div></div></div>
     </div>
     <div class="gallery-item reveal reveal-delay-1">
-      <img class="gallery-img" src="images/img_03.jpg" alt="Mulch bed with shrubs">
+      <img class="gallery-img" src="images/img_03.jpg" onerror="this.style.background=\'#2a5740\';this.removeAttribute(\'src\')" alt="Mulch bed with shrubs">
       <div class="gallery-overlay"><div><div class="gallery-overlay-tag">Planting</div><div class="gallery-overlay-text">Shrub &amp; Mulch Bed Install</div></div></div>
     </div>
     <div class="gallery-item reveal reveal-delay-2">
-      <img class="gallery-img" src="images/img_09.jpg" alt="Brick edging and drainage">
+      <img class="gallery-img" src="images/img_09.jpg" onerror="this.style.background=\'#2a5740\';this.removeAttribute(\'src\')" alt="Brick edging and drainage">
       <div class="gallery-overlay"><div><div class="gallery-overlay-tag">Drainage</div><div class="gallery-overlay-text">Brick Edging &amp; River Rock Drainage</div></div></div>
     </div>
   </div>
@@ -3994,7 +3999,7 @@ footer {
   <div class="footer-grid">
     <div class="footer-brand">
       <div class="nav-logo" style="flex-direction:row;align-items:center;gap:11px;">
-        <img src="images/img_04.png" alt="Envision Logo" style="width:44px;height:44px;object-fit:contain;border-radius:50%;background:rgba(255,255,255,0.12);padding:4px;flex-shrink:0;">
+        <img src="images/img_04.png" onerror="this.style.background=\'#2a5740\';this.removeAttribute(\'src\')" alt="Envision Logo" style="width:44px;height:44px;object-fit:contain;border-radius:50%;background:rgba(255,255,255,0.12);padding:4px;flex-shrink:0;">
         <div>
           <span class="nav-logo-main" style="color:var(--white);">Envision Outdoor</span>
           <span class="nav-logo-sub" style="display:block;">Solutions</span>
@@ -4083,6 +4088,9 @@ footer {
      JAVASCRIPT
 ============================================================ -->
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/* ------- Mark page as JS-ready for animations ------- */
+document.body.classList.add('js-ready');
+
 /* ------- Navbar scroll ------- */
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
@@ -4119,6 +4127,16 @@ window.addEventListener('load', () => {
 
 /* ------- Scroll reveal ------- */
 const revealEls = document.querySelectorAll('.reveal');
+// Trigger all reveals on load for elements already in view
+window.addEventListener('load', () => {
+  document.querySelectorAll('.reveal').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      el.classList.add('visible');
+    }
+  });
+});
+
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -4233,4 +4251,17 @@ document.getElementById('apply-form').addEventListener('submit', function(e) {
     document.getElementById('apply-success').style.display = 'block';
   }
 });
-document.querySelectorAll('a[h
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      const offset = 80;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  });
+});
+</script>
+</body>
+</html>
