@@ -12,7 +12,7 @@
 <meta property="og:image" content="images/share.jpg">
 <link rel="icon" type="image/png" href="images/icon-180.png">
 <link rel="apple-touch-icon" href="images/icon-180.png">
-<link rel="preload" as="image" href="images/striped-lawn.webp" fetchpriority="high">
+<link rel="preload" as="image" href="images/hero.webp" imagesrcset="images/hero-1000.webp 1000w, images/hero.webp 2000w" imagesizes="100vw" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&display=swap" rel="stylesheet">
@@ -175,7 +175,7 @@ h2 em, h1 em { font-style: italic; font-weight: 400; color: var(--leaf); }
   color: #fff; background: var(--ink);
   overflow: hidden;
 }
-.hero-img { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%; animation: settle 2.4s var(--ease) both; }
+.hero-img { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: 62% 50%; animation: settle 2.4s var(--ease) both; }
 .hero::before {
   content: ''; position: absolute; inset: 0; z-index: -1;
   background:
@@ -215,6 +215,12 @@ h2 em, h1 em { font-style: italic; font-weight: 400; color: var(--leaf); }
 .service .n { font-family: var(--display); font-style: italic; font-size: 1rem; color: var(--leaf); padding-top: 5px; }
 .service h3 { font-size: 1.45rem; line-height: 1.2; color: var(--ink); }
 .service p { grid-column: 2; margin-top: 8px; font-size: .98rem; color: var(--muted); }
+
+.service-photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: clamp(32px, 5vw, 56px); }
+.service-photos figure { position: relative; border-radius: var(--r); overflow: hidden; aspect-ratio: 4 / 3; background: var(--forest); }
+.service-photos img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
+.service-photos figure:hover img { transform: scale(1.045); }
+.service-photos figcaption { position: absolute; left: 14px; bottom: 14px; background: rgba(247, 243, 234, .94); color: var(--ink); font-weight: 700; font-size: .88rem; padding: 7px 14px; border-radius: 999px; }
 
 /* ---------- Work ---------- */
 #work { background: var(--sand); }
@@ -300,9 +306,13 @@ h2 em, h1 em { font-style: italic; font-weight: 400; color: var(--leaf); }
 .plan.hot .tag, .plan.hot .price small { color: rgba(255, 255, 255, .68); }
 .plan.hot .price { border-color: var(--line-light); }
 .plan .flag { position: absolute; top: -13px; left: 24px; background: var(--lime); color: var(--ink); font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 5px 12px; border-radius: 999px; }
-.custom { margin-top: 24px; background: var(--sand); border-radius: var(--r); padding: clamp(24px, 4vw, 40px); display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
-.custom h3 { font-size: 1.6rem; color: var(--ink); }
-.custom p { color: var(--muted); max-width: 60ch; margin-top: 6px; }
+.custom {
+  margin-top: 24px; border-radius: var(--r); padding: clamp(28px, 5vw, 56px); color: #fff; overflow: hidden;
+  background: linear-gradient(90deg, rgba(10, 24, 16, .9) 0%, rgba(10, 24, 16, .72) 45%, rgba(10, 24, 16, .1) 100%), var(--ink) url("images/quote-banner.webp") right center / cover no-repeat;
+}
+.custom > div { max-width: 560px; }
+.custom h3 { font-size: clamp(1.6rem, 3vw, 2.2rem); color: #fff; }
+.custom p { color: rgba(255, 255, 255, .8); margin: 8px 0 24px; }
 
 /* ---------- Process ---------- */
 #process { background: var(--sand); }
@@ -385,8 +395,9 @@ input:focus, select:focus, textarea:focus { outline: 0; border-color: var(--leaf
 .sent button { margin-top: 14px; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; color: var(--moss); }
 
 /* ---------- Careers ---------- */
-.careers-top { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(32px, 6vw, 80px); align-items: end; margin-bottom: clamp(36px, 5vw, 56px); }
-.perks { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 24px; }
+.careers-top { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(28px, 5vw, 64px); align-items: center; margin-bottom: clamp(36px, 5vw, 56px); }
+.crew { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: var(--r); }
+.perks { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px 32px; }
 .perks li { display: grid; grid-template-columns: 20px 1fr; gap: 10px; font-size: .95rem; color: var(--muted); }
 .perks svg { width: 20px; height: 20px; color: var(--leaf); margin-top: 2px; }
 .perks b { display: block; color: var(--ink); }
@@ -433,6 +444,7 @@ footer { background: var(--ink); color: rgba(255, 255, 255, .7); padding-block: 
   .portrait .chip { left: auto; right: -10px; }
   .faq .head { position: static; }
   .steps { grid-template-columns: repeat(2, 1fr); row-gap: 40px; }
+  .perks { grid-template-columns: 1fr 1fr; }
   .quotes, .gallery { columns: 2; }
   .job { grid-template-columns: 1fr auto; }
   .job p { grid-column: 1 / -1; grid-row: 2; }
@@ -473,6 +485,10 @@ footer { background: var(--ink); color: rgba(255, 255, 255, .7); padding-block: 
   .faq details p { padding-right: 0; }
   form { grid-template-columns: 1fr; }
   .custom .btn, .apply .btn-submit { width: 100%; }
+  .custom { background: linear-gradient(180deg, rgba(10, 24, 16, .82), rgba(10, 24, 16, .7)), var(--ink) url("images/quote-banner.webp") 78% center / cover no-repeat; }
+  .service-photos { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .service-photos figure:first-child { grid-column: 1 / -1; aspect-ratio: 16 / 10; }
+  .service-photos figcaption { left: 10px; bottom: 10px; font-size: .8rem; padding: 5px 11px; }
   .foot { grid-template-columns: 1fr; gap: 32px; }
   .mower-strip { height: 150px; }
   .lb-prev, .lb-next { top: auto; bottom: 16px; translate: none; }
@@ -567,7 +583,7 @@ footer { background: var(--ink); color: rgba(255, 255, 255, .7); padding-block: 
 
 <!-- ============ Hero ============ -->
 <div class="hero on-dark" id="top">
-  <img class="hero-img" src="images/striped-lawn.webp" alt="Freshly striped lawn leading up to a stone home in Northeast Ohio" width="1179" height="882" fetchpriority="high">
+  <img class="hero-img" src="images/hero.webp" srcset="images/hero-1000.webp 1000w, images/hero.webp 2000w" sizes="100vw" alt="Striped lawn and freshly mulched beds in front of a stone home at sunset" width="2000" height="1131" fetchpriority="high">
   <div class="wrap">
     <span class="eyebrow">Landscaping &amp; Hardscaping · Seville, OH</span>
     <h1>Transform your outdoor space <em>with confidence.</em></h1>
@@ -607,6 +623,11 @@ footer { background: var(--ink); color: rgba(255, 255, 255, .7); padding-block: 
         <p class="lede">From seasonal refreshes to complete outdoor transformations — we handle every detail so you don't have to.</p>
       </div>
       <a href="#contact" class="btn btn-line">Request a Quote <svg><use href="#i-arrow"/></svg></a>
+    </div>
+    <div class="service-photos">
+      <figure class="reveal"><img src="images/service-mulch.webp" alt="Curved bed with fresh black mulch, hostas and hydrangeas in front of a brick home" width="1000" height="747" loading="lazy"><figcaption>Landscape &amp; Beds</figcaption></figure>
+      <figure class="reveal" style="--d:.08s"><img src="images/service-pavers.webp" alt="Paver patio with a curved stone seating wall and walkway" width="1000" height="747" loading="lazy"><figcaption>Pavers &amp; Hardscape</figcaption></figure>
+      <figure class="reveal" style="--d:.16s"><img src="images/service-fence.webp" alt="New cedar privacy fence and gate along a backyard lawn" width="1000" height="747" loading="lazy"><figcaption>Fencing</figcaption></figure>
     </div>
     <div class="services">
       <article class="service reveal"><span class="n">01</span><h3>Landscape Design</h3><p>Custom design plans that turn your vision into a cohesive outdoor living space. We consider aesthetics, function, drainage, and long-term plant health.</p></article>
@@ -786,8 +807,8 @@ footer { background: var(--ink); color: rgba(255, 255, 255, .7); padding-block: 
       <div>
         <h3>Need a custom quote?</h3>
         <p>Not every project fits a package. Tell us what you're envisioning and we'll come to your property, assess the scope, and deliver a transparent, no-obligation estimate — completely free.</p>
+        <a href="#contact" class="btn btn-lime">Request My Free Estimate <svg><use href="#i-arrow"/></svg></a>
       </div>
-      <a href="#contact" class="btn btn-dark">Request My Free Estimate <svg><use href="#i-arrow"/></svg></a>
     </div>
   </div>
 </section>
@@ -973,7 +994,8 @@ footer { background: var(--ink); color: rgba(255, 255, 255, .7); padding-block: 
         <h2>Work outdoors. <em>Build something real.</em></h2>
         <p class="lede">We're always looking for hardworking, dependable people who take pride in their work and want to grow with a company that values craftsmanship over shortcuts. Full-time and seasonal positions available.</p>
       </div>
-      <ul class="perks reveal" style="--d:.1s">
+      <img class="crew reveal" style="--d:.1s" src="images/crew.webp" alt="Landscaping crew spreading mulch and planting shrubs in a front yard" width="1400" height="930" loading="lazy">
+      <ul class="perks reveal">
         <li><svg><use href="#i-check"/></svg><div><b>Competitive Pay</b>Weekly pay with performance bonuses</div></li>
         <li><svg><use href="#i-check"/></svg><div><b>Paid Training</b>We invest in your skills from day one</div></li>
         <li><svg><use href="#i-check"/></svg><div><b>Great Team Culture</b>Crews who support each other</div></li>
